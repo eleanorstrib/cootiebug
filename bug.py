@@ -3,10 +3,22 @@ import random
 
 from bug_data import rules
 
-print("\U0001F41B  " * 10, " * Welcome to CootieBug * ", "\U0001F41B  " * 10, )
 
-start_selection = input("Type 'rules' for info or 'play' to get started > ")
+def start_selection():
+    user_input = input("Type 'rules' for info or 'play' to get started > ")
+    return user_input
 
+def manager(start_selection):
+    user_input = start_selection()
+    if user_input.lower() == 'rules':
+        for item in rules:
+            print(item)
+        start_selection()
+    elif user_input.lower() == 'play':
+        start_selection()
+    else:
+        print("Did not understand your command.")
+        start_selection()
 
 # user types rules, print in console from bud_data
 
@@ -40,3 +52,9 @@ class Bug(object):
             self.mouth = True
         if value == 6:
             self.leg = True
+
+if __name__== '__main__':
+    print("\U0001F41B  " * 10, " * Welcome to CootieBug * ", "\U0001F41B  " * 10, )
+    manager(start_selection)
+
+main()
