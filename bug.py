@@ -1,8 +1,11 @@
 
-import random
+from random import randint
 
 from bug_data import rules
 
+def say_hello():
+    user_name = input("What's your name > ")
+    return user_name
 
 def start_selection():
     user_input = input("Type 'rules' for info or 'play' to get started > ")
@@ -24,11 +27,12 @@ def manager(start_selection):
 
 # user types play, generate a random number for them, then the computer
 # compare the numbers
+# create player/computer vars to hold scores
 # instantiate the bug class for each
+# roll the dice, get a number, check
 
-# determine
-
-
+def roll_to_start(player):
+    pass
 
 class Bug(object):
     def __init__(self):
