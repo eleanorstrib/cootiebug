@@ -18,7 +18,8 @@ def manager(start_selection):
     user_name = say_hello()
     user_input = start_selection()
     if user_input.lower() == 'rules':
-        print(rules)
+        for item in rules:
+            print(item)
         start_selection()
     elif user_input.lower() == 'play':
         roll_to_start(user_name)
@@ -54,6 +55,9 @@ def roll_to_start(user_name):
 def turn(roll_to_start, user_name):
     if roll_to_start == True:
         print(input("Ok %s, your turn! Type 'roll' to continue" % user_name))
+    else:
+        print("Rolling the dice for me...")
+
 
 
 
